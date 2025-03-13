@@ -9,7 +9,7 @@ Este proyecto es un simulador de sensores **GPS, temperatura y humedad** utiliza
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 - **Mosquitto**: Descárgalo e instálalo desde [aquí](https://mosquitto.org/download/).
-- **Python 3** y las siguientes librerías:
+- **Python ** y las siguientes librerías:
   ```bash
   pip install paho-mqtt django-channels channels-redis
   ```
