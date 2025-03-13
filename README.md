@@ -51,48 +51,8 @@ Cada programador debe encargarse de su parte en una **rama separada**, asegurand
 ### 🔹 Cliente MQTT (`client.py`)
 Debe manejar la suscripción a los topics de **GPS, temperatura y humedad** y permitir que el chofer ajuste manualmente la temperatura. Se recomienda usar `paho-mqtt`.
 
-Ejemplo de suscripción:
-```python
-import paho.mqtt.client as mqtt
-
-def on_message(client, userdata, msg):
-    print(f"Mensaje recibido en {msg.topic}: {msg.payload.decode()}")
-
-client = mqtt.Client()
-client.on_message = on_message
-client.connect("localhost", 1885)
-client.subscribe("logix/gps", qos=2)  # QoS 2: Prioridad máxima
-client.subscribe("logix/temperatura", qos=2)
-client.subscribe("logix/humedad", qos=2)
-client.loop_forever()
-```
-
 ### 🔹 Sensores MQTT (`sensors.py`)
 Debe publicar datos simulados en los topics **logix/gps, logix/temperatura y logix/humedad**, asegurando que la temperatura y la humedad cambien dinámicamente según condiciones predefinidas.
-
-Ejemplo de publicación:
-```python
-import paho.mqtt.client as mqtt
-import json
-import time
-import random
-
-client = mqtt.Client()
-client.connect("localhost", 1885)
-
-while True:
-    gps_data = json.dumps({"lat": 19.4326, "lon": -99.1332, "speed": random.uniform(0, 80)})
-    temp_data = json.dumps({"valor": random.uniform(0, 30), "unidad": "C"})
-    humedad_data = json.dumps({"valor": random.uniform(10, 90), "unidad": "%"})
-
-    client.publish("logix/gps", gps_data, qos=2)
-    client.publish("logix/temperatura", temp_data, qos=2)
-    client.publish("logix/humedad", humedad_data, qos=2)
-
-    time.sleep(5)
-```
-
----
 
 ## 🔄 Integración con WebSockets
 
@@ -112,29 +72,10 @@ CHANNEL_LAYERS = {
     },
 }
 ```
-
 ### 🔹 WebSocket Consumer (`consumers.py`)
-```python
-from channels.generic.websocket import AsyncWebsocketConsumer
-import json
 
-class SensorConsumer(AsyncWebsocketConsumer):
-    async def connect(self):
-        await self.accept()
 
-    async def receive(self, text_data):
-        data = json.loads(text_data)
-        await self.send(text_data=json.dumps({"message": data}))
-```
 
-### 🔹 URL Routing (`routing.py`)
-```python
-from django.urls import re_path
-from mi_app.consumers import SensorConsumer
-
-websocket_urlpatterns = [
-    re_path(r'ws/sensores/$', SensorConsumer.as_asgi()),
-]
 ```
 
 Con esto, la aplicación puede recibir datos en tiempo real y mostrarlos en el frontend.
@@ -184,8 +125,4 @@ Con esto, la aplicación puede recibir datos en tiempo real y mostrarlos en el f
 - [Mosquitto Documentation](https://mosquitto.org/documentation/)
 - [Tutorial MQTT](https://www.hivemq.com/mqtt-essentials/)
 - [Django Channels](https://channels.readthedocs.io/en/latest/)
-
----
-
-¡Listo! Cada programador puede implementar su parte siguiendo estas instrucciones. 🚀
 
