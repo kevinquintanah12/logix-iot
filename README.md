@@ -76,11 +76,11 @@ CHANNEL_LAYERS = {
 
 
 
-```
+
 
 Con esto, la aplicación puede recibir datos en tiempo real y mostrarlos en el frontend.
 
----
+
 
 ## 📖 Flujo de Trabajo en Git
 
