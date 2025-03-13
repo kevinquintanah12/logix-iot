@@ -1,4 +1,4 @@
-# 🚛 Simulador de Sensores IoT con MQTT
+#  Simulador de Sensores IoT con MQTT
 
 Este proyecto es un simulador de sensores **GPS, temperatura y humedad** utilizando **Mosquitto** como broker MQTT. Permite que la aplicación del chofer y otras aplicaciones reciban datos en tiempo real. Además, el chofer puede ajustar la temperatura manualmente para mantener condiciones óptimas en el transporte.
 
