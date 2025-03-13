@@ -95,12 +95,9 @@ Con esto, la aplicación puede recibir datos en tiempo real y mostrarlos en el f
    ```
 3. **Actualizar con la rama principal antes de hacer push**  
    ```bash
-   git pull --rebase origin main
+   git push origin tu_rama
    ```
-4. **Subir cambios y crear un PR**  
-   ```bash
-   git push origin feature_nombre
-   ```
+
 
 ---
 
