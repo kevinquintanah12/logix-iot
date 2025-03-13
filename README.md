@@ -1,69 +1,57 @@
-# 🚚 LogiX - Simulador IoT con MQTT
+# 🚛 Simulador de Sensores IoT con MQTT
 
-Este proyecto tiene como objetivo emular sensores de **GPS, temperatura y humedad** mediante MQTT, permitiendo que la **App del Chofer** y otras aplicaciones puedan recibir datos en tiempo real. Además, el chofer podrá ajustar la temperatura en función del clima para optimizar el transporte de productos.
-
----
-
-## 📌 Configuración del Broker MQTT con Mosquitto
-
-Soy responsable de configurar el **broker MQTT** utilizando **Mosquitto**. Ustedes deberán encargarse de los sensores, el cliente MQTT y la configuración de la QoS para garantizar la prioridad de los mensajes.
-
-### 🔹 Instalación de Mosquitto
-
-1. Instala **Mosquitto** en tu sistema:
-   ```bash
-   sudo apt update && sudo apt install -y mosquitto mosquitto-clients
-   ```
-
-2. Verifica la instalación:
-   ```bash
-   mosquitto -v
-   ```
-
-### 🔹 Configuración del Broker
-
-1. Clona el repositorio y entra en el directorio:
-   ```bash
-   git clone https://github.com/kevinquintanah12/logix-iot.git
-   cd logix-iot/mqtt-simulator
-   ```
-
-2. Edita el archivo de configuración `config/mosquitto.conf` con lo siguiente:
-   ```plaintext
-   listener 1883
-   allow_anonymous false
-   password_file config/mosquitto_passwd
-   log_dest file logs/mosquitto.log
-   ```
-
-3. Crea usuarios para autenticación:
-   ```bash
-   mosquitto_passwd -c config/mosquitto_passwd usuario_mqtt
-   ```
-
-4. Inicia el broker:
-   ```bash
-   mosquitto -c config/mosquitto.conf -v
-   ```
+Este proyecto es un simulador de sensores **GPS, temperatura y humedad** utilizando **Mosquitto** como broker MQTT. Permite que la aplicación del chofer y otras aplicaciones reciban datos en tiempo real. Además, el chofer puede ajustar la temperatura manualmente para mantener condiciones óptimas en el transporte.
 
 ---
 
-## 📡 Configuración del Cliente MQTT y Sensores (Responsabilidad de los demás programadores)
+## 📌 Requisitos
 
-Ustedes deberán desarrollar los sensores y el cliente MQTT siguiendo estas instrucciones:
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-### 🔹 1️⃣ Clonar el repositorio y crear su branch
+- **Mosquitto**: Descárgalo e instálalo desde [aquí](https://mosquitto.org/download/).
+- **Python 3** y las siguientes librerías:
+  ```bash
+  pip install paho-mqtt django-channels channels-redis
+  ```
+- **Git** para clonar el repositorio y trabajar en branches.
 
-Cada programador debe trabajar en su propia branch:
+---
+
+## 📂 Configuración del Entorno
+
+1. **Clonar el repositorio y crear una rama de trabajo**
    ```bash
-   git checkout -b feature/nombre-tarea
+   git clone https://github.com/kevinquintanah12/logix-mqtt.git
+   cd logix-mqtt/mqtt-simulator
+   git checkout -b tu_rama
    ```
 
-### 🔹 2️⃣ Crear el cliente MQTT (`client.py`)
+## 🚀 Iniciar el Broker MQTT
 
-El cliente MQTT se encargará de suscribirse a los topics relevantes y recibir datos de los sensores.
+Ejecuta el siguiente comando para iniciar Mosquitto:
 
-#### 📜 Ejemplo de `client.py`
+```bash
+mosquitto -c config/mosquitto.conf -v
+```
+
+Si todo está bien, el broker comenzará a escuchar en el puerto `1885`.
+
+Para probar la suscripción, asegúrate de pasar el usuario y la contraseña:
+
+```bash
+mosquitto_sub -h localhost -p 1885 -t "mi/tema" -u "usuario2" -P "logix"
+```
+
+---
+
+## 📡 Implementación de Sensores y Cliente MQTT
+
+Cada programador debe encargarse de su parte en una **rama separada**, asegurando que la **QoS sea prioritaria** para garantizar la confiabilidad de los datos.
+
+### 🔹 Cliente MQTT (`client.py`)
+Debe manejar la suscripción a los topics de **GPS, temperatura y humedad** y permitir que el chofer ajuste manualmente la temperatura. Se recomienda usar `paho-mqtt`.
+
+Ejemplo de suscripción:
 ```python
 import paho.mqtt.client as mqtt
 
@@ -71,115 +59,133 @@ def on_message(client, userdata, msg):
     print(f"Mensaje recibido en {msg.topic}: {msg.payload.decode()}")
 
 client = mqtt.Client()
-client.username_pw_set("usuario_mqtt", "password")
-client.connect("localhost", 1883, 60)
-client.subscribe("logix/sensores/#")
 client.on_message = on_message
+client.connect("localhost", 1885)
+client.subscribe("logix/gps", qos=2)  # QoS 2: Prioridad máxima
+client.subscribe("logix/temperatura", qos=2)
+client.subscribe("logix/humedad", qos=2)
 client.loop_forever()
 ```
 
-### 🔹 3️⃣ Emulación de Sensores
+### 🔹 Sensores MQTT (`sensors.py`)
+Debe publicar datos simulados en los topics **logix/gps, logix/temperatura y logix/humedad**, asegurando que la temperatura y la humedad cambien dinámicamente según condiciones predefinidas.
 
-Cada sensor debe publicar datos en los topics correspondientes. Aquí hay ejemplos:
-
-#### 🛰️ GPS (emulación de movimiento)
+Ejemplo de publicación:
 ```python
 import paho.mqtt.client as mqtt
-import json, time
-
-def generar_gps():
-    lat, lon, speed = 19.4326, -99.1332, 60
-    return json.dumps({"lat": lat, "lon": lon, "speed": speed})
+import json
+import time
+import random
 
 client = mqtt.Client()
-client.username_pw_set("usuario_mqtt", "password")
-client.connect("localhost", 1883, 60)
+client.connect("localhost", 1885)
 
 while True:
-    client.publish("logix/sensores/gps", generar_gps())
+    gps_data = json.dumps({"lat": 19.4326, "lon": -99.1332, "speed": random.uniform(0, 80)})
+    temp_data = json.dumps({"valor": random.uniform(0, 30), "unidad": "C"})
+    humedad_data = json.dumps({"valor": random.uniform(10, 90), "unidad": "%"})
+
+    client.publish("logix/gps", gps_data, qos=2)
+    client.publish("logix/temperatura", temp_data, qos=2)
+    client.publish("logix/humedad", humedad_data, qos=2)
+
     time.sleep(5)
 ```
 
-#### 🌡️ Temperatura (chofer puede ajustar valores)
+---
+
+## 🔄 Integración con WebSockets
+
+Para recibir y mostrar datos en tiempo real en Django, configuramos `django-channels` y WebSockets. 
+
+### 🔹 Configuración de `settings.py`
 ```python
-import paho.mqtt.client as mqtt
-import json, time, random
+INSTALLED_APPS = [
+    'channels',
+    'mi_app',  # Reemplaza con el nombre de tu app
+]
 
-def generar_temperatura():
-    valor = random.uniform(0, 30)  # Simulación de cambios climáticos
-    return json.dumps({"valor": valor, "unidad": "C"})
-
-client = mqtt.Client()
-client.username_pw_set("usuario_mqtt", "password")
-client.connect("localhost", 1883, 60)
-
-while True:
-    client.publish("logix/sensores/temperatura", generar_temperatura())
-    time.sleep(10)
+ASGI_APPLICATION = "mi_proyecto.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",  # Usa Redis en producción
+    },
+}
 ```
 
-#### 💧 Humedad
+### 🔹 WebSocket Consumer (`consumers.py`)
 ```python
-import paho.mqtt.client as mqtt
-import json, time, random
+from channels.generic.websocket import AsyncWebsocketConsumer
+import json
 
-def generar_humedad():
-    valor = random.uniform(20, 80)
-    return json.dumps({"valor": valor, "unidad": "%"})
+class SensorConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        await self.accept()
 
-client = mqtt.Client()
-client.username_pw_set("usuario_mqtt", "password")
-client.connect("localhost", 1883, 60)
-
-while True:
-    client.publish("logix/sensores/humedad", generar_humedad())
-    time.sleep(10)
+    async def receive(self, text_data):
+        data = json.loads(text_data)
+        await self.send(text_data=json.dumps({"message": data}))
 ```
+
+### 🔹 URL Routing (`routing.py`)
+```python
+from django.urls import re_path
+from mi_app.consumers import SensorConsumer
+
+websocket_urlpatterns = [
+    re_path(r'ws/sensores/$', SensorConsumer.as_asgi()),
+]
+```
+
+Con esto, la aplicación puede recibir datos en tiempo real y mostrarlos en el frontend.
 
 ---
 
-## 🔧 Configuración de QoS (Calidad de Servicio)
+## 📖 Flujo de Trabajo en Git
 
-Para garantizar la prioridad de los mensajes:
-- **QoS 2** para datos críticos como temperatura y humedad.
-- **QoS 1** para GPS, ya que su actualización es frecuente pero menos crítica.
-
-Ejemplo de publicación con QoS en Python:
-```python
-client.publish("logix/sensores/temperatura", generar_temperatura(), qos=2)
-```
-
----
-
-## 🔄 Flujo de Trabajo con Git
-
-1. **Clonar el repositorio y cambiar a su branch**
+1. **Crear tu branch**  
    ```bash
-   git checkout -b feature/nombre-tarea
+   git checkout -b feature_nombre
    ```
-2. **Desarrollar el código y hacer commits**
+2. **Realizar cambios y confirmar**  
    ```bash
    git add .
-   git commit -m "Añadido sensor de temperatura"
+   git commit -m "Implementación del sensor de temperatura"
    ```
-3. **Subir los cambios**
+3. **Actualizar con la rama principal antes de hacer push**  
    ```bash
-   git push origin feature/nombre-tarea
+   git pull --rebase origin main
    ```
-4. **Crear un Pull Request en GitHub** para revisión y fusión con `main`.
+4. **Subir cambios y crear un PR**  
+   ```bash
+   git push origin feature_nombre
+   ```
 
 ---
 
-## 🚀 Pruebas Finales
+## 🛠 Solución de Problemas
 
-Una vez que todo esté implementado, prueba el flujo completo:
-1. **Inicia el broker MQTT**
-   ```bash
-   mosquitto -c config/mosquitto.conf -v
-   ```
-2. **Ejecuta los sensores** en diferentes terminales.
-3. **Ejecuta el cliente MQTT** para verificar que los datos llegan correctamente.
+1. **Error de autenticación (`Connection Refused: not authorised`)**
+   - Usa el usuario y contraseña correctos.
+   - Verifica que `mosquitto_passwd` esté bien configurado.
 
-Si todo está correcto, la app del chofer y otras aplicaciones podrán recibir los datos de temperatura, humedad y GPS en tiempo real. 🎯
+2. **Mosquitto ya está ejecutándose en el puerto 1885**
+   - Verifica procesos en el puerto con:
+     ```bash
+     netstat -ano | findstr :1885  # Windows
+     lsof -i :1885  # Linux/Mac
+     ```
+   - Detén el proceso antes de reiniciar Mosquitto.
 
+---
+
+## 📖 Referencias
+
+- [Mosquitto Documentation](https://mosquitto.org/documentation/)
+- [Tutorial MQTT](https://www.hivemq.com/mqtt-essentials/)
+- [Django Channels](https://channels.readthedocs.io/en/latest/)
+
+---
+
+¡Listo! Cada programador puede implementar su parte siguiendo estas instrucciones. 🚀
 
