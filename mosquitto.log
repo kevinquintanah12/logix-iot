@@ -1,0 +1,37 @@
+1741825826: mosquitto version 2.0.21 starting
+1741825826: Config loaded from C:\Users\Kevin\mqtt-simulator\mqtt-simulator\config\mosquitto.conf.
+1741825826: Opening ipv6 listen socket on port 1883.
+1741825826: Opening ipv4 listen socket on port 1883.
+1741825826: Error: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+1741825851: mosquitto version 2.0.21 starting
+1741825851: Config loaded from C:\Users\Kevin\mqtt-simulator\mqtt-simulator\config\mosquitto.conf.
+1741825851: Opening ipv6 listen socket on port 1883.
+1741825851: Opening ipv4 listen socket on port 1883.
+1741825851: Error: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+1741825884: mosquitto version 2.0.21 starting
+1741825884: Config loaded from C:\Users\Kevin\mqtt-simulator\mqtt-simulator\config\mosquitto.conf.
+1741825884: Opening ipv6 listen socket on port 1883.
+1741825884: Opening ipv4 listen socket on port 1883.
+1741825884: Error: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+1741825948: mosquitto version 2.0.21 starting
+1741825948: Config loaded from C:\Users\Kevin\mqtt-simulator\mqtt-simulator\config\mosquitto.conf.
+1741825948: Opening ipv6 listen socket on port 1885.
+1741825948: Opening ipv4 listen socket on port 1885.
+1741825948: mosquitto version 2.0.21 running
+1741825995: New connection from ::1:58060 on port 1885.
+1741825995: Sending CONNACK to auto-CF285ECC-F41C-83F2-A962-FFDE008DB100 (0, 5)
+1741825995: Client auto-CF285ECC-F41C-83F2-A962-FFDE008DB100 disconnected, not authorised.
+1741826045: New connection from ::1:58067 on port 1885.
+1741826045: New client connected from ::1:58067 as auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66 (p2, c1, k60, u'usuario2').
+1741826045: No will message specified.
+1741826045: Sending CONNACK to auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66 (0, 0)
+1741826045: Received SUBSCRIBE from auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
+1741826045: 	mi/tema (QoS 0)
+1741826045: auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66 0 mi/tema
+1741826045: Sending SUBACK to auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
+1741826106: Received PINGREQ from auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
+1741826106: Sending PINGRESP to auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
+1741826163: mosquitto version 2.0.21 terminating
