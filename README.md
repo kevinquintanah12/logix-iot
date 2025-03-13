@@ -16,6 +16,56 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 - **Git** para clonar el repositorio y trabajar en branches.
 
 ---
+## Cómo añadir Mosquitto al PATH
+
+## Windows
+
+1. Instala Mosquitto desde el sitio oficial: [https://mosquitto.org/download/](https://mosquitto.org/download/).
+2. Abre el Explorador de archivos y busca la carpeta donde se instaló Mosquitto (por defecto suele estar en `C:\Program Files\mosquitto`).
+3. Copia la ruta de la carpeta `mosquitto`.
+4. Abre el menú de inicio y busca **Editar las variables de entorno del sistema**.
+5. En la ventana que se abre, haz clic en **Variables de entorno...**.
+6. En la sección **Variables del sistema**, busca y selecciona la variable `Path` y haz clic en **Editar**.
+7. Haz clic en **Nuevo** y pega la ruta copiada anteriormente.
+8. Presiona **Aceptar** en todas las ventanas y reinicia la terminal o el sistema.
+9. Verifica la instalación ejecutando en la terminal:
+   ```sh
+   mosquitto -v
+   ```
+
+## Linux/Mac
+
+1. Instala Mosquitto:
+   ```sh
+   # Ubuntu/Debian
+   sudo apt update && sudo apt install -y mosquitto mosquitto-clients
+   
+   # macOS (Homebrew)
+   brew install mosquitto
+   ```
+2. Encuentra la ruta de Mosquitto ejecutando:
+   ```sh
+   which mosquitto
+   ```
+3. Añade la ruta al `PATH`:
+   ```sh
+   export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
+   ```
+   Si Mosquitto está en otra ubicación, ajusta la ruta en el comando.
+4. Para hacer esto permanente, agrega la línea anterior al archivo de configuración de tu shell:
+   ```sh
+   echo 'export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin' >> ~/.bashrc  # Para Bash
+   echo 'export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin' >> ~/.zshrc   # Para Zsh
+   ```
+5. Aplica los cambios con:
+   ```sh
+   source ~/.bashrc  # Para Bash
+   source ~/.zshrc   # Para Zsh
+   ```
+6. Verifica la instalación ejecutando:
+   ```sh
+   mosquitto -v
+   ```
 
 ## 📂 Configuración del Entorno
 
