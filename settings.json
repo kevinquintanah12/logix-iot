@@ -1,5 +1,5 @@
 {
-    "BROKER_URL": "mqtt.eclipse.org",
+    "BROKER_URL": "localhost",
     "BROKER_PORT": 1883,
     "TOPICS": [
         {
@@ -47,6 +47,34 @@
                     "RANGE_START": 1,
                     "RANGE_END": 4,
                     "MAX_STEP": 4
+                }
+            ]
+        },
+        {
+            "TYPE": "single",
+            "TOPIC_NAME": "logix/gps",
+            "TIME_INTERVAL": 10,
+            "DATA": [
+                {
+                    "NAME": "lat",
+                    "TYPE": "float",
+                    "RANGE_START": 19.0,
+                    "RANGE_END": 20.0,
+                    "MAX_STEP": 0.0001
+                },
+                {
+                    "NAME": "lon",
+                    "TYPE": "float",
+                    "RANGE_START": -99.5,
+                    "RANGE_END": -98.5,
+                    "MAX_STEP": 0.0001
+                },
+                {
+                    "NAME": "speed",
+                    "TYPE": "int",
+                    "RANGE_START": 40,
+                    "RANGE_END": 90,
+                    "MAX_STEP": 5
                 }
             ]
         }

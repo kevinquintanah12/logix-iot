@@ -1,1 +1,17 @@
+asgiref==3.8.1
+certifi==2025.1.31
+channels==4.2.0
+channels_redis==4.2.1
+charset-normalizer==3.4.1
+Django==5.1.7
+django-channels==0.7.0
+idna==3.10
+msgpack==1.1.0
+oauthlib==3.2.2
 paho-mqtt==1.5.0
+redis==5.2.1
+requests==2.32.3
+requests-oauthlib==2.0.0
+six==1.17.0
+sqlparse==0.5.3
+urllib3==2.3.0
