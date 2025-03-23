@@ -1,0 +1,113 @@
+1742755098: mosquitto version 2.0.18 starting
+1742755098: Config loaded from ../config/mosquitto.conf.
+1742755098: Error: Unable to open pwfile "mosquitto_passwd".
+1742755098: Error opening password file "mosquitto_passwd".
+1742755305: mosquitto version 2.0.18 starting
+1742755305: Config loaded from ../config/mosquitto.conf.
+1742755305: Error: Unable to open pwfile "mosquitto_passwd".
+1742755305: Error opening password file "mosquitto_passwd".
+1742755615: mosquitto version 2.0.18 starting
+1742755615: Config loaded from ../config/mosquitto.conf.
+1742755615: Error: Unable to open pwfile "./mosquitto_passwd".
+1742755615: Error opening password file "./mosquitto_passwd".
+1742755866: mosquitto version 2.0.18 starting
+1742755866: Config loaded from ../config/mosquitto.conf.
+1742755866: Error: Unable to open pwfile "./mosquitto_passwd".
+1742755866: Error opening password file "./mosquitto_passwd".
+1742755905: mosquitto version 2.0.18 starting
+1742755905: Config loaded from ../config/mosquitto.conf.
+1742755905: Error: Unable to open pwfile "./mosquitto_passwd usuario2".
+1742755905: Error opening password file "./mosquitto_passwd usuario2".
+1742755913: mosquitto version 2.0.18 starting
+1742755913: Config loaded from ../config/mosquitto.conf.
+1742755913: Error: Unable to open pwfile "./mosquitto_passwd usuario2".
+1742755913: Error opening password file "./mosquitto_passwd usuario2".
+1742755974: mosquitto version 2.0.18 starting
+1742755974: Config loaded from ../config/mosquitto.conf.
+1742755974: Error: Unable to open pwfile "./mosquitto_passwd".
+1742755974: Error opening password file "./mosquitto_passwd".
+1742756343: mosquitto version 2.0.18 starting
+1742756343: Config loaded from ../config/mosquitto.conf.
+1742756343: Error: Unable to open pwfile "./mosquitto_passwd".
+1742756343: Error opening password file "./mosquitto_passwd".
+1742756348: mosquitto version 2.0.18 starting
+1742756348: Config loaded from ../config/mosquitto.conf.
+1742756348: Error: Unable to open pwfile "./mosquitto_passwd".
+1742756348: Error opening password file "./mosquitto_passwd".
+1742756497: mosquitto version 2.0.18 starting
+1742756497: Config loaded from ../config/mosquitto.conf.
+1742756497: Error: Unable to open pwfile "./mosquitto_passwd".
+1742756497: Error opening password file "./mosquitto_passwd".
+1742756514: mosquitto version 2.0.18 starting
+1742756514: Config loaded from ../config/mosquitto.conf.
+1742756514: Error: Unable to open pwfile "./mosquitto_passwd".
+1742756514: Error opening password file "./mosquitto_passwd".
+1742756534: mosquitto version 2.0.18 starting
+1742756534: Config loaded from ../config/mosquitto.conf.
+1742756534: Error: Unable to open pwfile "./mosquitto_passwd".
+1742756534: Error opening password file "./mosquitto_passwd".
+1742757127: mosquitto version 2.0.18 starting
+1742757127: Config loaded from ../config/mosquitto.conf.
+1742757127: Error: Unable to open pwfile "./mosquitto_passwd".
+1742757127: Error opening password file "./mosquitto_passwd".
+1742757183: mosquitto version 2.0.18 starting
+1742757183: Config loaded from ../config/mosquitto.conf.
+1742757183: Error: Unable to open pwfile "./mosquitto_passwd".
+1742757183: Error opening password file "./mosquitto_passwd".
+1742757457: mosquitto version 2.0.18 starting
+1742757457: Config loaded from ../config/mosquitto.conf.
+1742757457: Error: Unable to open pwfile "./mosquitto_passwd".
+1742757457: Error opening password file "./mosquitto_passwd".
+1742757500: mosquitto version 2.0.18 starting
+1742757500: Config loaded from ../config/mosquitto.conf.
+1742757500: Error: Unable to open pwfile "mosquitto_passwd".
+1742757500: Error opening password file "mosquitto_passwd".
+1742757540: mosquitto version 2.0.18 starting
+1742757540: Config loaded from ../config/mosquitto.conf.
+1742757540: Error: Unable to open pwfile "../mosquitto_passwd".
+1742757540: Error opening password file "../mosquitto_passwd".
+1742757580: mosquitto version 2.0.18 starting
+1742757580: Config loaded from ../config/mosquitto.conf.
+1742757580: Error: Unable to open pwfile "../mosquitto_passwd".
+1742757580: Error opening password file "../mosquitto_passwd".
+1742757894: mosquitto version 2.0.18 starting
+1742757894: Config loaded from ../config/mosquitto.conf.
+1742757894: Error: Unable to open pwfile "mosquitto_passwd".
+1742757894: Error opening password file "mosquitto_passwd".
+1742757934: mosquitto version 2.0.18 starting
+1742757934: Config loaded from ../config/mosquitto.conf.
+1742757934: Error: Unable to open pwfile "./mqtt-simulator/mosquitto_passwd".
+1742757934: Error opening password file "./mqtt-simulator/mosquitto_passwd".
+1742758071: mosquitto version 2.0.18 starting
+1742758071: Config loaded from ../config/mosquitto.conf.
+1742758071: Error: Unable to open pwfile "mosquitto_passwd".
+1742758071: Error opening password file "mosquitto_passwd".
+1742758262: mosquitto version 2.0.18 starting
+1742758262: Config loaded from ../config/mosquitto.conf.
+1742758262: Error: Unable to open pwfile "mosquitto_passwd".
+1742758262: Error opening password file "mosquitto_passwd".
+1742758331: mosquitto version 2.0.18 starting
+1742758331: Config loaded from ../config/mosquitto.conf.
+1742758331: Error: Unable to open pwfile "mosquitto_passwd".
+1742758331: Error opening password file "mosquitto_passwd".
+1742758439: mosquitto version 2.0.18 starting
+1742758439: Config loaded from ../config/mosquitto.conf.
+1742758439: Error: Unable to open pwfile "../mosquitto_passwd".
+1742758439: Error opening password file "../mosquitto_passwd".
+1742758519: mosquitto version 2.0.18 starting
+1742758519: Config loaded from ../config/mosquitto.conf.
+1742758519: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742758519: Opening ipv4 listen socket on port 1883.
+1742758519: Error: Address already in use
+1742758588: mosquitto version 2.0.18 starting
+1742758588: Config loaded from ../config/mosquitto.conf.
+1742758588: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742758588: Opening ipv4 listen socket on port 1885.
+1742758588: Opening ipv6 listen socket on port 1885.
+1742758588: mosquitto version 2.0.18 running
+1742758726: mosquitto version 2.0.18 terminating
+1742758726: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742758726: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742758726: Error: Permission denied.

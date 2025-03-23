@@ -35,3 +35,412 @@
 1741826106: Received PINGREQ from auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
 1741826106: Sending PINGRESP to auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
 1741826163: mosquitto version 2.0.21 terminating
+1742758742: mosquitto version 2.0.18 starting
+1742758742: Config loaded from ../config/mosquitto.conf.
+1742758742: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742758742: Opening ipv4 listen socket on port 1885.
+1742758742: Opening ipv6 listen socket on port 1885.
+1742758742: mosquitto version 2.0.18 running
+1742758765: mosquitto version 2.0.18 terminating
+1742758765: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742758765: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742758765: Error: Permission denied.
+1742758808: mosquitto version 2.0.18 starting
+1742758808: Config loaded from ../config/mosquitto.conf.
+1742758808: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742758808: Opening ipv4 listen socket on port 1885.
+1742758808: Opening ipv6 listen socket on port 1885.
+1742758808: mosquitto version 2.0.18 running
+1742758826: mosquitto version 2.0.18 terminating
+1742758826: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742758826: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742758826: Error: Permission denied.
+1742758919: mosquitto version 2.0.18 starting
+1742758919: Config loaded from ../config/mosquitto.conf.
+1742758919: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742758919: Opening ipv4 listen socket on port 1885.
+1742758919: Opening ipv6 listen socket on port 1885.
+1742758919: mosquitto version 2.0.18 running
+1742758941: mosquitto version 2.0.18 terminating
+1742758941: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742758941: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742758941: Error: Permission denied.
+1742759033: mosquitto version 2.0.18 starting
+1742759033: Config loaded from ../config/mosquitto.conf.
+1742759033: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759033: Opening ipv4 listen socket on port 1885.
+1742759033: Opening ipv6 listen socket on port 1885.
+1742759033: mosquitto version 2.0.18 running
+1742759187: mosquitto version 2.0.18 terminating
+1742759187: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759187: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759187: Error: Permission denied.
+1742759363: mosquitto version 2.0.18 starting
+1742759363: Config loaded from ../config/mosquitto.conf.
+1742759363: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759363: Opening ipv4 listen socket on port 1885.
+1742759363: Opening ipv6 listen socket on port 1885.
+1742759363: mosquitto version 2.0.18 running
+1742759367: New connection from 127.0.0.1:53727 on port 1885.
+1742759367: New client connected from 127.0.0.1:53727 as auto-E0644C38-0C46-B138-55E7-D0DC84FF167E (p2, c1, k60).
+1742759405: mosquitto version 2.0.18 terminating
+1742759405: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759405: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759405: Error: Permission denied.
+1742759485: mosquitto version 2.0.18 starting
+1742759485: Config loaded from ../config/mosquitto.conf.
+1742759485: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759485: Opening ipv4 listen socket on port 1885.
+1742759485: Opening ipv6 listen socket on port 1885.
+1742759485: mosquitto version 2.0.18 running
+1742759491: New connection from 127.0.0.1:52593 on port 1885.
+1742759491: New client connected from 127.0.0.1:52593 as auto-0ADA975A-94F1-D38E-24FE-840328E76CCA (p2, c1, k60).
+1742759498: mosquitto version 2.0.18 terminating
+1742759498: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759498: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759498: Error: Permission denied.
+1742759532: mosquitto version 2.0.18 starting
+1742759532: Config loaded from ../config/mosquitto.conf.
+1742759532: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759532: Opening ipv4 listen socket on port 1885.
+1742759532: Opening ipv6 listen socket on port 1885.
+1742759532: mosquitto version 2.0.18 running
+1742759568: mosquitto version 2.0.18 terminating
+1742759568: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759568: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759568: Error: Permission denied.
+1742759575: mosquitto version 2.0.18 starting
+1742759575: Config loaded from ../config/mosquitto.conf.
+1742759575: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759575: Opening ipv4 listen socket on port 1885.
+1742759575: Opening ipv6 listen socket on port 1885.
+1742759575: mosquitto version 2.0.18 running
+1742759579: New connection from 127.0.0.1:46779 on port 1885.
+1742759579: New client connected from 127.0.0.1:46779 as auto-27FDB153-2D74-FA34-670B-C2325D32CD3F (p2, c1, k60).
+1742759585: mosquitto version 2.0.18 terminating
+1742759585: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759585: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759585: Error: Permission denied.
+1742759591: mosquitto version 2.0.18 starting
+1742759591: Config loaded from ../config/mosquitto.conf.
+1742759591: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759591: Opening ipv4 listen socket on port 1885.
+1742759591: Opening ipv6 listen socket on port 1885.
+1742759591: mosquitto version 2.0.18 running
+1742759605: mosquitto version 2.0.18 terminating
+1742759605: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759605: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759605: Error: Permission denied.
+1742759754: mosquitto version 2.0.18 starting
+1742759754: Config loaded from ../config/mosquitto.conf.
+1742759754: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742759754: Opening ipv4 listen socket on port 1885.
+1742759754: Opening ipv6 listen socket on port 1885.
+1742759754: mosquitto version 2.0.18 running
+1742759871: New connection from 127.0.0.1:38325 on port 1885.
+1742759871: New client connected from 127.0.0.1:38325 as auto-729907B4-D59C-C2FD-5314-B88C4767F12B (p2, c1, k60).
+1742759932: Client auto-729907B4-D59C-C2FD-5314-B88C4767F12B disconnected.
+1742759932: New connection from 127.0.0.1:36865 on port 1885.
+1742759932: Client <unknown> closed its connection.
+1742759935: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742759935: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742759935: Error: Permission denied.
+1742760068: New connection from 127.0.0.1:51345 on port 1885.
+1742760068: New client connected from 127.0.0.1:51345 as auto-E52D1CDC-0C5F-0605-3B2E-7E895548E7DF (p2, c1, k60).
+1742760115: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760115: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760115: Error: Permission denied.
+1742760190: mosquitto version 2.0.18 terminating
+1742760190: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760190: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760190: Error: Permission denied.
+1742760191: mosquitto version 2.0.18 starting
+1742760191: Config loaded from ../config/mosquitto.conf.
+1742760191: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742760191: Opening ipv4 listen socket on port 1885.
+1742760191: Opening ipv6 listen socket on port 1885.
+1742760191: mosquitto version 2.0.18 running
+1742760197: New connection from 127.0.0.1:33637 on port 1885.
+1742760197: New client connected from 127.0.0.1:33637 as auto-98F35B5C-7D09-E2D8-62A2-A6B1C4186D18 (p2, c1, k60).
+1742760371: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760371: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760371: Error: Permission denied.
+1742760553: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760553: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760553: Error: Permission denied.
+1742760734: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760734: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760734: Error: Permission denied.
+1742760821: Client auto-98F35B5C-7D09-E2D8-62A2-A6B1C4186D18 disconnected.
+1742760821: New connection from 127.0.0.1:51345 on port 1885.
+1742760821: Client <unknown> closed its connection.
+1742760824: mosquitto version 2.0.18 terminating
+1742760824: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742760824: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742760824: Error: Permission denied.
+1742760832: mosquitto version 2.0.18 starting
+1742760832: Config loaded from ../config/mosquitto.conf.
+1742760832: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742760832: Opening ipv4 listen socket on port 1885.
+1742760832: Opening ipv6 listen socket on port 1885.
+1742760832: mosquitto version 2.0.18 running
+1742760841: New connection from 127.0.0.1:58699 on port 1885.
+1742760841: New client connected from 127.0.0.1:58699 as auto-A9EBF076-73CF-3BCF-F516-F061D08E2B08 (p2, c1, k60).
+1742761006: Client auto-A9EBF076-73CF-3BCF-F516-F061D08E2B08 disconnected.
+1742761006: New connection from 127.0.0.1:42247 on port 1885.
+1742761006: Client <unknown> closed its connection.
+1742761012: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761012: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761012: Error: Permission denied.
+1742761018: New connection from 127.0.0.1:39617 on port 1885.
+1742761018: New client connected from 127.0.0.1:39617 as auto-C3383A35-63E3-D961-EAA4-2F7D943EC772 (p2, c1, k60).
+1742761194: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761194: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761194: Error: Permission denied.
+1742761292: Client auto-C3383A35-63E3-D961-EAA4-2F7D943EC772 disconnected.
+1742761292: New connection from 127.0.0.1:48515 on port 1885.
+1742761292: Client <unknown> closed its connection.
+1742761305: mosquitto version 2.0.18 terminating
+1742761305: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761305: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761305: Error: Permission denied.
+1742761323: mosquitto version 2.0.18 starting
+1742761323: Config loaded from ../config/mosquitto.conf.
+1742761323: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742761323: Opening ipv4 listen socket on port 1885.
+1742761323: Opening ipv6 listen socket on port 1885.
+1742761323: mosquitto version 2.0.18 running
+1742761388: New connection from 127.0.0.1:37385 on port 1885.
+1742761388: New client connected from 127.0.0.1:37385 as auto-D50E98F3-D53E-16CD-BC53-5A6C2FD2AD90 (p2, c1, k60).
+1742761503: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761503: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761503: Error: Permission denied.
+1742761508: Client auto-D50E98F3-D53E-16CD-BC53-5A6C2FD2AD90 disconnected.
+1742761508: New connection from 127.0.0.1:40285 on port 1885.
+1742761508: Client <unknown> closed its connection.
+1742761511: mosquitto version 2.0.18 terminating
+1742761511: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761511: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761511: Error: Permission denied.
+1742761544: mosquitto version 2.0.18 starting
+1742761544: Config loaded from ../config/mosquitto.conf.
+1742761544: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742761544: Opening ipv4 listen socket on port 1885.
+1742761544: Opening ipv6 listen socket on port 1885.
+1742761544: mosquitto version 2.0.18 running
+1742761605: New connection from 127.0.0.1:57407 on port 1885.
+1742761605: New client connected from 127.0.0.1:57407 as auto-91415BCF-46B4-8E57-6C3F-3ABCE2030B4B (p2, c1, k60).
+1742761725: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761725: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761725: Error: Permission denied.
+1742761906: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742761906: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742761906: Error: Permission denied.
+1742762087: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762087: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762087: Error: Permission denied.
+1742762268: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762268: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762268: Error: Permission denied.
+1742762449: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762449: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762449: Error: Permission denied.
+1742762568: New connection from 127.0.0.1:60722 on port 1885.
+1742762568: New client connected from 127.0.0.1:60722 as auto-DBA03A61-F404-7BFA-7C4A-4E787FB789AC (p2, c1, k60).
+1742762577: Client auto-DBA03A61-F404-7BFA-7C4A-4E787FB789AC disconnected.
+1742762580: New connection from 127.0.0.1:43260 on port 1885.
+1742762580: New client connected from 127.0.0.1:43260 as auto-3105EABA-0CE2-05E9-6009-03951D91CA9A (p2, c1, k60).
+1742762629: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762629: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762629: Error: Permission denied.
+1742762645: Client auto-91415BCF-46B4-8E57-6C3F-3ABCE2030B4B disconnected.
+1742762645: New connection from 127.0.0.1:58027 on port 1885.
+1742762645: Client <unknown> closed its connection.
+1742762655: New connection from 127.0.0.1:57527 on port 1885.
+1742762655: New client connected from 127.0.0.1:57527 as auto-52245C33-ED0B-E4F4-CF4F-A2F44719E5F3 (p2, c1, k60).
+1742762714: Client auto-3105EABA-0CE2-05E9-6009-03951D91CA9A disconnected.
+1742762717: mosquitto version 2.0.18 terminating
+1742762717: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762717: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762717: Error: Permission denied.
+1742762814: mosquitto version 2.0.18 starting
+1742762814: Config loaded from ../config/mosquitto.conf.
+1742762814: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742762814: Opening ipv4 listen socket on port 1885.
+1742762814: Opening ipv6 listen socket on port 1885.
+1742762814: mosquitto version 2.0.18 running
+1742762818: New connection from 127.0.0.1:50840 on port 1885.
+1742762818: New client connected from 127.0.0.1:50840 as auto-60FB328F-3530-8512-77A6-FB0C3B3B2DBF (p2, c1, k60).
+1742762823: New connection from 127.0.0.1:50939 on port 1885.
+1742762823: New client connected from 127.0.0.1:50939 as auto-445D9BF1-2F57-F192-246F-7C6185579011 (p2, c1, k60).
+1742762863: Client auto-60FB328F-3530-8512-77A6-FB0C3B3B2DBF disconnected.
+1742762877: New connection from 127.0.0.1:57848 on port 1885.
+1742762877: New client connected from 127.0.0.1:57848 as auto-8C389B40-FA95-2C5D-210A-61F92F9F6648 (p2, c1, k60).
+1742762915: Client auto-8C389B40-FA95-2C5D-210A-61F92F9F6648 disconnected.
+1742762994: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742762994: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742762994: Error: Permission denied.
+1742763078: Client auto-445D9BF1-2F57-F192-246F-7C6185579011 disconnected.
+1742763078: New connection from 127.0.0.1:50347 on port 1885.
+1742763078: Client <unknown> closed its connection.
+1742763081: mosquitto version 2.0.18 terminating
+1742763081: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742763081: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742763081: Error: Permission denied.
+1742763104: mosquitto version 2.0.18 starting
+1742763104: Config loaded from ../config/mosquitto.conf.
+1742763104: Warning: File ../../mosquitto_passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 ../../mosquitto_passwd`.
+1742763104: Opening ipv4 listen socket on port 1885.
+1742763104: Opening ipv6 listen socket on port 1885.
+1742763104: mosquitto version 2.0.18 running
+1742763108: New connection from 127.0.0.1:45569 on port 1885.
+1742763108: New client connected from 127.0.0.1:45569 as auto-406BF793-CCD1-A174-7E04-0E71017D8ABC (p2, c1, k60).
+1742763137: Client auto-406BF793-CCD1-A174-7E04-0E71017D8ABC disconnected.
+1742763137: New connection from 127.0.0.1:58889 on port 1885.
+1742763137: Client <unknown> closed its connection.
+1742763147: New connection from 127.0.0.1:37925 on port 1885.
+1742763147: New client connected from 127.0.0.1:37925 as auto-293D7EE5-3B72-1ADA-DAD7-5DD66A1E34E6 (p2, c1, k60).
+1742763149: Client auto-293D7EE5-3B72-1ADA-DAD7-5DD66A1E34E6 disconnected.
+1742763149: New connection from 127.0.0.1:60209 on port 1885.
+1742763149: Client <unknown> closed its connection.
+1742763263: New connection from 127.0.0.1:45269 on port 1885.
+1742763263: New client connected from 127.0.0.1:45269 as auto-2421422D-8F1C-80DA-57A6-1C6B4B7CAFFD (p2, c1, k60).
+1742763285: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742763285: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742763285: Error: Permission denied.
+1742763290: Client auto-2421422D-8F1C-80DA-57A6-1C6B4B7CAFFD disconnected.
+1742763294: New connection from 127.0.0.1:50453 on port 1885.
+1742763294: New client connected from 127.0.0.1:50453 as auto-A61984E4-0A54-0EB4-C609-D3E5CE6EFD7B (p2, c1, k60).
+1742763317: Client auto-A61984E4-0A54-0EB4-C609-D3E5CE6EFD7B disconnected.
+1742763326: New connection from 127.0.0.1:34885 on port 1885.
+1742763326: New client connected from 127.0.0.1:34885 as auto-67FB4660-9359-9F9C-413B-1FB105D5251F (p2, c1, k60).
+1742763328: Client auto-67FB4660-9359-9F9C-413B-1FB105D5251F disconnected.
+1742763328: New connection from 127.0.0.1:46033 on port 1885.
+1742763328: Client <unknown> closed its connection.
+1742763466: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742763466: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742763466: Error: Permission denied.
+1742763468: New connection from 127.0.0.1:45181 on port 1885.
+1742763468: New client connected from 127.0.0.1:45181 as auto-A8553498-2629-216D-8DEB-4BCF9BE2A957 (p2, c1, k60).
+1742763647: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742763647: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742763647: Error: Permission denied.
+1742763667: Client auto-A8553498-2629-216D-8DEB-4BCF9BE2A957 disconnected.
+1742763667: New connection from 127.0.0.1:53689 on port 1885.
+1742763667: Client <unknown> closed its connection.
+1742763674: New connection from 127.0.0.1:40757 on port 1885.
+1742763674: New client connected from 127.0.0.1:40757 as auto-1017E4A9-8CAF-A8B9-0D7F-54E34690C317 (p2, c1, k60).
+1742763705: Client auto-1017E4A9-8CAF-A8B9-0D7F-54E34690C317 disconnected.
+1742763705: New connection from 127.0.0.1:60697 on port 1885.
+1742763705: Client <unknown> closed its connection.
+1742763737: New connection from 127.0.0.1:60175 on port 1885.
+1742763737: New client connected from 127.0.0.1:60175 as auto-45949EE7-2A66-A197-D532-DC4049A9A11C (p2, c1, k60).
+1742763824: New connection from 127.0.0.1:41594 on port 1885.
+1742763824: New client connected from 127.0.0.1:41594 as auto-52508372-3433-B87C-48EF-7D24119113FA (p2, c1, k60).
+1742763828: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742763828: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742763828: Error: Permission denied.
+1742763847: Client auto-52508372-3433-B87C-48EF-7D24119113FA disconnected.
+1742763852: New connection from 127.0.0.1:44838 on port 1885.
+1742763852: New client connected from 127.0.0.1:44838 as auto-5042AAD6-B12B-AB6B-6061-BB9D279CFE27 (p2, c1, k60).
+1742763852: Client auto-5042AAD6-B12B-AB6B-6061-BB9D279CFE27 disconnected.
+1742763860: New connection from 127.0.0.1:60586 on port 1885.
+1742763860: New client connected from 127.0.0.1:60586 as auto-0DB117F5-D45C-D28E-6866-0A95CB67A3F6 (p2, c1, k60).
+1742763860: Client auto-0DB117F5-D45C-D28E-6866-0A95CB67A3F6 disconnected.
+1742764008: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764008: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764008: Error: Permission denied.
+1742764190: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764190: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764190: Error: Permission denied.
+1742764231: Client auto-45949EE7-2A66-A197-D532-DC4049A9A11C disconnected.
+1742764231: New connection from 127.0.0.1:33443 on port 1885.
+1742764231: Client <unknown> closed its connection.
+1742764288: New connection from 127.0.0.1:41659 on port 1885.
+1742764288: New client connected from 127.0.0.1:41659 as auto-C9EAA2A8-30CA-7CD3-19CB-DF6315C29A9E (p2, c1, k60).
+1742764310: Client auto-C9EAA2A8-30CA-7CD3-19CB-DF6315C29A9E disconnected.
+1742764310: New connection from 127.0.0.1:55851 on port 1885.
+1742764310: Client <unknown> closed its connection.
+1742764325: New connection from 127.0.0.1:47155 on port 1885.
+1742764325: New client connected from 127.0.0.1:47155 as auto-3B120584-C9D5-4676-22F9-75C94A632991 (p2, c1, k60).
+1742764333: New connection from 127.0.0.1:60556 on port 1885.
+1742764333: New client connected from 127.0.0.1:60556 as auto-F257A043-456C-CF5C-2E26-628E227C6135 (p2, c1, k60).
+1742764333: Client auto-F257A043-456C-CF5C-2E26-628E227C6135 disconnected.
+1742764352: Client auto-3B120584-C9D5-4676-22F9-75C94A632991 disconnected.
+1742764352: New connection from 127.0.0.1:51465 on port 1885.
+1742764352: Client <unknown> closed its connection.
+1742764370: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764370: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764370: Error: Permission denied.
+1742764406: New connection from 127.0.0.1:60321 on port 1885.
+1742764406: New client connected from 127.0.0.1:60321 as auto-7FBEC342-CB4C-17D7-8CE0-9B99D5B3A1B7 (p2, c1, k60).
+1742764418: Client auto-7FBEC342-CB4C-17D7-8CE0-9B99D5B3A1B7 disconnected.
+1742764418: New connection from 127.0.0.1:37385 on port 1885.
+1742764418: Client <unknown> closed its connection.
+1742764504: New connection from 127.0.0.1:49743 on port 1885.
+1742764504: New client connected from 127.0.0.1:49743 as auto-4EED90EA-A6B5-A42D-99CB-A35B9C36CD36 (p2, c1, k60).
+1742764552: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764552: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764552: Error: Permission denied.
+1742764603: Client auto-4EED90EA-A6B5-A42D-99CB-A35B9C36CD36 has exceeded timeout, disconnecting.
+1742764614: New connection from 127.0.0.1:37481 on port 1885.
+1742764614: New client connected from 127.0.0.1:37481 as auto-96F29727-D264-BF4A-09DB-7F9EB0F51C64 (p2, c1, k60).
+1742764621: Client auto-96F29727-D264-BF4A-09DB-7F9EB0F51C64 disconnected.
+1742764630: New connection from 127.0.0.1:47016 on port 1885.
+1742764630: New client connected from 127.0.0.1:47016 as auto-978675D0-FF25-D257-524A-58F175670D9A (p2, c1, k60).
+1742764630: Client auto-978675D0-FF25-D257-524A-58F175670D9A disconnected.
+1742764635: New connection from 127.0.0.1:46871 on port 1885.
+1742764635: New client connected from 127.0.0.1:46871 as auto-020FBBC0-DB30-300D-1955-874D1251D6D8 (p2, c1, k60).
+1742764641: New connection from 127.0.0.1:46308 on port 1885.
+1742764641: New client connected from 127.0.0.1:46308 as auto-5B48255B-B99A-517B-9305-91D7EC443BAC (p2, c1, k60).
+1742764641: Client auto-5B48255B-B99A-517B-9305-91D7EC443BAC disconnected.
+1742764649: Client auto-020FBBC0-DB30-300D-1955-874D1251D6D8 disconnected.
+1742764729: New connection from 127.0.0.1:41661 on port 1885.
+1742764729: New client connected from 127.0.0.1:41661 as auto-DA53F25B-B76D-73E8-ABBA-0C8B15F4E952 (p2, c1, k60).
+1742764733: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764733: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764733: Error: Permission denied.
+1742764739: New connection from 127.0.0.1:58298 on port 1885.
+1742764739: New client connected from 127.0.0.1:58298 as auto-97F53942-24B4-A388-40CC-10AF271E4B22 (p2, c1, k60).
+1742764739: Client auto-97F53942-24B4-A388-40CC-10AF271E4B22 disconnected.
+1742764747: New connection from 127.0.0.1:48866 on port 1885.
+1742764747: New client connected from 127.0.0.1:48866 as auto-8153032E-75FF-596E-FCFC-6D4DA51875FC (p2, c1, k60).
+1742764747: Client auto-8153032E-75FF-596E-FCFC-6D4DA51875FC disconnected.
+1742764777: Client auto-DA53F25B-B76D-73E8-ABBA-0C8B15F4E952 disconnected.
+1742764777: New connection from 127.0.0.1:41315 on port 1885.
+1742764777: Client <unknown> closed its connection.
+1742764778: New connection from 127.0.0.1:54953 on port 1885.
+1742764778: New client connected from 127.0.0.1:54953 as auto-2CE504ED-E22E-050F-C18B-09F0E89A8345 (p2, c1, k60).
+1742764786: Client auto-2CE504ED-E22E-050F-C18B-09F0E89A8345 disconnected.
+1742764786: New connection from 127.0.0.1:41365 on port 1885.
+1742764786: Client <unknown> closed its connection.
+1742764804: New connection from 127.0.0.1:55255 on port 1885.
+1742764804: New client connected from 127.0.0.1:55255 as auto-6D83724A-CF53-15C0-EF83-4829A94DFA29 (p2, c1, k60).
+1742764818: New connection from 127.0.0.1:44204 on port 1885.
+1742764818: New client connected from 127.0.0.1:44204 as auto-3EC73786-2C1E-4C11-0885-B41D066629E5 (p2, c1, k60).
+1742764818: Client auto-3EC73786-2C1E-4C11-0885-B41D066629E5 disconnected.
+1742764837: Client auto-6D83724A-CF53-15C0-EF83-4829A94DFA29 disconnected.
+1742764837: New connection from 127.0.0.1:46359 on port 1885.
+1742764837: Client <unknown> closed its connection.
+1742764913: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742764913: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742764913: Error: Permission denied.
+1742765094: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1742765094: Error saving in-memory database, unable to remove /var/lib/mosquitto//mosquitto.db.new.
+1742765094: Error: Permission denied.
