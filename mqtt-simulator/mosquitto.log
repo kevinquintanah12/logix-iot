@@ -1,0 +1,8 @@
+1742003360: mosquitto version 2.0.21 starting
+1742003360: Config loaded from config/mosquitto.conf.
+1742003360: Error: Unable to open pwfile "mosquitto_passwd".
+1742003360: Error opening password file "mosquitto_passwd".
+1742004110: mosquitto version 2.0.21 starting
+1742004110: Config loaded from config/mosquitto.conf.
+1742004110: Error: Unable to open pwfile "mosquitto_passwd".
+1742004110: Error opening password file "mosquitto_passwd".

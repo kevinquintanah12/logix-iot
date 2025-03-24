@@ -35,9 +35,3 @@
 1741826106: Received PINGREQ from auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
 1741826106: Sending PINGRESP to auto-FA6EC56D-8CF2-7F23-6909-55DD72FB4B66
 1741826163: mosquitto version 2.0.21 terminating
-1742194480: mosquitto version 2.0.21 starting
-1742194480: Config loaded from mqtt-simulator/config/mosquitto.conf.
-1742194480: Opening ipv6 listen socket on port 1885.
-1742194480: Opening ipv4 listen socket on port 1885.
-1742194480: mosquitto version 2.0.21 running
-1742195174: mosquitto version 2.0.21 terminating
