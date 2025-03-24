@@ -7,7 +7,6 @@ import json
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-
 class TopicData:
     """Clase base para la estructura de datos de los topics MQTT."""
 
