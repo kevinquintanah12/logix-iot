@@ -21,15 +21,25 @@ CONTROL_TOPIC= "logix/controliot"   # Comandos para encender/apagar el sensor
 # Variables globales (se asignan vía pub)
 current_temp = None         # Temperatura actual del sensor
 current_hum  = None         # Humedad actual del sensor
-TEMP_RANGE   = (None, None)   # Rango permitido de temperatura
-HUM_RANGE    = (None, None)   # Rango permitido de humedad
+TEMP_RANGE   = (None, None)   # Rango permitido de temperatura (min, max)
+HUM_RANGE    = (None, None)   # Rango permitido de humedad (min, max)
 
-# Variable para almacenar la última temperatura recibida vía GPS
+# Variable para almacenar la última temperatura recibida vía GPS (solo para referencia)
 gps_temp = None
 
 # Flags de configuración y estado del sensor
 configured = False
 sensor_enabled = True       # Sensor encendido por defecto
+
+# Flag para indicar que el usuario ajustó manualmente la temperatura,
+# de forma que se congela la actualización automática
+manual_adjust = False
+
+# Flag que indica que la temperatura se salió del rango y se requiere ajuste manual
+require_adjustment = False
+
+# Flag para evitar el envío excesivo de alertas
+alert_published = False
 
 # Bloqueo para acceso a variables globales
 data_lock = threading.Lock()
@@ -47,7 +57,8 @@ def on_connect(client, userdata, flags, rc):
 
 # Callback para recepción de mensajes
 def on_message(client, userdata, msg):
-    global gps_temp, current_temp, current_hum, TEMP_RANGE, HUM_RANGE, configured, sensor_enabled
+    global gps_temp, current_temp, current_hum, TEMP_RANGE, HUM_RANGE
+    global configured, sensor_enabled, manual_adjust, require_adjustment, alert_published
     try:
         payload = msg.payload.decode('utf-8')
         data = json.loads(payload)
@@ -56,6 +67,7 @@ def on_message(client, userdata, msg):
         return
 
     if msg.topic == GPS_TOPIC:
+        # Se recibe la temperatura proveniente del GPS solo para registro
         if "temperature" in data:
             try:
                 new_gps_temp = float(data["temperature"])
@@ -77,6 +89,10 @@ def on_message(client, userdata, msg):
                 hum_max = float(data["hum_max"])
                 HUM_RANGE = (hum_min, hum_max)
                 configured = True
+                # Al configurar, se restablecen las banderas de ajuste
+                manual_adjust = False
+                require_adjustment = False
+                alert_published = False
             print("IoT Sensor: Configuración inicial establecida:", {
                 "current_temp": current_temp,
                 "current_hum": current_hum,
@@ -91,11 +107,24 @@ def on_message(client, userdata, msg):
             if "new_temp" in data:
                 new_temp = float(data["new_temp"])
                 with data_lock:
-                    if TEMP_RANGE[0] <= new_temp <= TEMP_RANGE[1]:
+                    if TEMP_RANGE[0] is not None and TEMP_RANGE[1] is not None:
                         current_temp = new_temp
-                        print("IoT Sensor: Ajuste manual de temperatura a:", new_temp)
+                        manual_adjust = True
+                        # Si el nuevo valor está dentro del rango, se indica que la temperatura fue reestablecida.
+                        if TEMP_RANGE[0] <= new_temp <= TEMP_RANGE[1]:
+                            require_adjustment = False
+                            alert_published = False
+                            print("IoT Sensor: Ajuste manual realizado. Temperatura reestablecida a:", new_temp)
+                            reestablished = {"status": "Temperatura reestablecida", "temperature": current_temp}
+                            client.publish(ALERT_TOPIC, json.dumps(reestablished), qos=1, retain=True)
+                        else:
+                            # Se acepta el ajuste aunque esté fuera del rango y se publica alerta.
+                            require_adjustment = True
+                            print("IoT Sensor: Ajuste manual realizado. Valor de ajuste fuera del rango permitido:", new_temp)
+                            alert = {"alert": "Temperatura fuera de rango, ajuste requerido", "temperature": current_temp}
+                            client.publish(ALERT_TOPIC, json.dumps(alert), qos=1, retain=True)
                     else:
-                        print("IoT Sensor: Valor de ajuste fuera del rango permitido:", new_temp)
+                        print("IoT Sensor: Rango de temperatura no definido.")
             else:
                 print("IoT Sensor: No se encontró 'new_temp' en el mensaje de ajuste.")
         except Exception as e:
@@ -117,26 +146,31 @@ def on_message(client, userdata, msg):
             else:
                 print("IoT Sensor: No se encontró 'command' en el mensaje de control.")
         except Exception as e:
-            print("Error procesando comando de control:", e)
+            print("IoT Sensor: Error procesando comando de control:", e)
     else:
         print("Mensaje recibido en tópico desconocido:", msg.topic)
 
 # Actualización de la temperatura del sensor
+# Se aplica un 80% de probabilidad para deriva normal y un 20% para deriva mayor.
 def update_sensor_temperature():
-    global current_temp, gps_temp
+    global current_temp, require_adjustment
     with data_lock:
-        if sensor_enabled:
-            if gps_temp is not None:
-                # Ajuste gradual hacia la temperatura proveniente del GPS (50% del delta)
-                delta = gps_temp - current_temp
-                if abs(delta) < 0.1:
-                    current_temp = gps_temp
-                    gps_temp = None
+        if sensor_enabled and not manual_adjust and not require_adjustment:
+            if random.random() < 0.2:  # 20% evento de deriva mayor
+                drift = random.uniform(-0.5, 0.5)
+                print("IoT Sensor: Evento de deriva mayor:", drift)
+            else:  # 80% deriva normal
+                drift = random.uniform(-0.05, 0.05)
+            new_temp = current_temp + drift
+            if TEMP_RANGE[0] is not None and TEMP_RANGE[1] is not None:
+                if new_temp < TEMP_RANGE[0] or new_temp > TEMP_RANGE[1]:
+                    require_adjustment = True
+                    print("IoT Sensor: Temperatura fuera del rango (nuevo valor:", round(new_temp,2),
+                          ") - se requiere ajuste manual.")
                 else:
-                    current_temp += 0.5 * delta
+                    current_temp = new_temp
             else:
-                # Deriva aleatoria si no hay dato del GPS
-                current_temp += random.uniform(-0.1, 0.1)
+                current_temp = new_temp
 
 # Actualización de la humedad del sensor
 def update_sensor_humidity():
@@ -144,13 +178,14 @@ def update_sensor_humidity():
     with data_lock:
         if sensor_enabled:
             current_hum += random.uniform(-0.5, 0.5)
-            if current_hum < HUM_RANGE[0]:
+            if HUM_RANGE[0] is not None and current_hum < HUM_RANGE[0]:
                 current_hum = HUM_RANGE[0]
-            elif current_hum > HUM_RANGE[1]:
+            elif HUM_RANGE[1] is not None and current_hum > HUM_RANGE[1]:
                 current_hum = HUM_RANGE[1]
 
 # Publicación de datos en los tópicos correspondientes
 def publish_sensor_data(client):
+    global alert_published
     with data_lock:
         if not configured or not sensor_enabled:
             return
@@ -169,12 +204,17 @@ def publish_sensor_data(client):
     client.publish(HUM_TOPIC, json.dumps(hum_data), qos=1, retain=True)
     print("IoT Sensor: Publicado", hum_data, "en", HUM_TOPIC)
     
-    # Publicar alerta si la temperatura se sale del rango permitido
+    # Publicar alerta si la temperatura está fuera del rango
     with data_lock:
-        if current_temp < TEMP_RANGE[0] or current_temp > TEMP_RANGE[1]:
-            alert = {"alert": "Temperatura fuera de rango"}
-            client.publish(ALERT_TOPIC, json.dumps(alert), qos=1, retain=True)
-            print("IoT Sensor: Alerta publicada", alert)
+        if TEMP_RANGE[0] is not None and TEMP_RANGE[1] is not None:
+            if current_temp < TEMP_RANGE[0] or current_temp > TEMP_RANGE[1]:
+                if not alert_published:
+                    alert = {"alert": "Temperatura fuera de rango, ajuste requerido", "temperature": temp_val}
+                    client.publish(ALERT_TOPIC, json.dumps(alert), qos=1, retain=True)
+                    print("IoT Sensor: Alerta publicada", alert)
+                    alert_published = True
+            else:
+                alert_published = False
 
 def main():
     client = mqtt.Client()

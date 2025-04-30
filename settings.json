@@ -53,7 +53,7 @@
         {
             "TYPE": "single",
             "TOPIC_NAME": "logix/gps",
-            "TIME_INTERVAL": 10,
+            "TIME_INTERVAL": 2,
             "DATA": [
                 {
                     "NAME": "lat",

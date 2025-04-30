@@ -1,18 +1,11 @@
-# Usar la imagen oficial de Mosquitto
+# Usa la imagen base de Mosquitto
 FROM eclipse-mosquitto:latest
 
-# Establecer el directorio de trabajo
-WORKDIR /mqtt-simulator
+# Copia tu archivo de configuración desde tu máquina local al contenedor
+COPY ./mqtt-simulator/config/mosquitto.conf /mosquitto/config/mosquitto.conf
 
-# Crear el directorio donde se almacenarán los archivos de configuración
-RUN mkdir -p config
+# Expone los puertos que vas a usar
+EXPOSE 1883 9001
 
-# Copiar el archivo de configuración
-COPY mqtt-simulator/config/mosquitto.conf /mqtt-simulator/config/mosquitto.conf
-
-# Exponer los puertos necesarios (puedes cambiar el puerto si lo modificaste)
-EXPOSE 1883
-EXPOSE 9001
-
-# Configurar el contenedor para usar el archivo de configuración
-CMD ["mosquitto", "-c", "/mqtt-simulator/config/mosquitto.conf", "-v"]
+# Comando por defecto para iniciar el contenedor
+CMD ["mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]

@@ -1,0 +1,18 @@
+services:
+  mqtt-simulator:
+    image: eclipse-mosquitto
+    container_name: mqtt-simulator
+    ports:
+      - "1883:1883" #default mqtt port
+      - "9001:9001" #default mqtt port for websockets
+    volumes:
+      - ./mqtt-simulator/config/mosquitto.conf:/mosquitto/config/mosquitto.conf:rw
+    restart: unless-stopped
+
+volumes:
+  config:
+  
+
+networks:
+  default:
+    name: mqtt-simulator-network

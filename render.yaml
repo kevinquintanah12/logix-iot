@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mqtt-simulator
+    env: docker
+    image: kevinherreraq/mqtt-simulator:latest
+    envVars:
+      - key: PORT
+        value: "1883"
+    healthCheckPath: "/"  # Aunque Mosquitto no es HTTP, Render lo necesita
