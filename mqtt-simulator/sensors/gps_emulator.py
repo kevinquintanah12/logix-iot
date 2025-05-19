@@ -1,4 +1,4 @@
-#!/usr/bin/python 
+#!/usr/bin/python
 
 import sys
 import math
@@ -91,7 +91,7 @@ class GPSEmulator(SensorBase):
                 end_lon = command_data.get("longdestino")
                 steps = command_data.get("steps", 5)
                 interval = command_data.get("interval", self.default_interval)
-                speed_factor = command_data.get("speed_factor", 10)
+                speed_factor = command_data.get("speed_factor", 7)
                 if all([start_lat, start_lon, end_lat, end_lon]):
                     self.stop_current_simulation()
                     print(f"Iniciando ruta desde ({start_lat}, {start_lon}) hasta ({end_lat}, {end_lon})")
@@ -227,9 +227,9 @@ class GPSEmulator(SensorBase):
                     city_name = "N/A"
                     print(f"Error al obtener datos de temperatura en el punto ({point[1]}, {point[0]}): {temperature_data.get('message')}")
                 data = {
-                    "lat": round(point[1], 6), 
-                    "lon": round(point[0], 6), 
-                    "temperature": temperature, 
+                    "lat": round(point[1], 6),  
+                    "lon": round(point[0], 6),  
+                    "temperature": temperature,  
                     "city": city_name
                 }
                 self.client.publish(self.topic, json.dumps(data), qos=2)
@@ -248,6 +248,9 @@ class GPSEmulator(SensorBase):
             alert_msg = {"alert": "Viaje completado", "timestamp": time.time()}
             self.client.publish("logix/alerts", json.dumps(alert_msg), qos=1, retain=True)
             print("Alerta enviada:", alert_msg)
+            # Limpia la alerta retenida en el broker
+            self.client.publish("logix/alerts", payload="", qos=1, retain=True)
+            print("Alerta retenida limpiada en el broker")
             # Envía un comando a IoT en CONTROLIOT para detener la simulación
             stop_msg = {"command": "off", "timestamp": time.time()}
             self.client.publish("logix/controliot", json.dumps(stop_msg), qos=1, retain=True)
